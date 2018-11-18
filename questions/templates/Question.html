@@ -1,0 +1,27 @@
+{% extend "template/base.htm" %}
+
+{% block content %}
+<h3>New Question</h3>
+<form class="custom-form-control formAsk" action="index.html" method="post">
+  <div class="row-md-1">
+    <div>
+      Title
+    </div>
+    <input type="text" name="head" value="How to build a moon park?">
+  </div>
+  <div class="row-md-8">
+    <div>
+      Text
+    </div>
+    <textarea name="Text" class="textarea"></textarea>
+  </div>
+  <div class="row-md-1">
+    <div>
+      Tags
+    </div>
+    <input type="text" name="tags">
+  </div>
+  <div class="row-md-2">
+    <input type="submit" name="ask" value="ASK">
+  </div>
+{% endblock %}

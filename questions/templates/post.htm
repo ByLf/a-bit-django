@@ -1,0 +1,20 @@
+<div class="border post row-md-2">
+  <div class="image icon col-md-2">
+    <img src="{{avatar}}" alt="">
+  </div>
+  <div class="col-md-10">
+    <h3>{{head}}</h3>
+    <div class="text">{{preview}}</div>
+    <div>
+      <a href="{{answer}}">answer({{col_answer}})</a>
+      Tags: {% for tag in tags%}
+        <a href="{{tag.src}}">{{tag.name}}</a>
+      {%endfor%}
+    </div>
+  </div>
+  <div class="col-md-2">
+    <form action="index.html" method="post">
+      <input type="numder" name="like" value="{{like}}">
+    </form>
+  </div>
+</div>

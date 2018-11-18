@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="https://getbootstrap.com/favicon.ico">
+  <link rel="stylesheet" href="../static/css/bootstrap.css">
+  <link rel="stylesheet" href="../static/css/master.css">
+  <title>Base document</title>
+
+</head>
+<body>
+  <header class="navbar navbar-expand-md">
+    <h1>Ask Bazhenov</h1>
+    <form class="form-inline my-4 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Ask" aria-label="Search">
+      <button class="btn btn-primary my-2 my-sm-0 bg-" type="submit">Ask</button>
+    </form>
+    <div class="indeficator pull-right">
+      <div class="image icon">
+        <img class="img-fluid" src="../static/no_avatar.png" alt="Avatar">
+      </div>
+      <div class="inline">
+        <div class="name">{{nick}}</div>
+        <div class="personalRef">
+          <a href="/settings.html">settings</a>
+          <a href="">log out</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="wrapper container row">
+    <main class="col-md-8 ">
+      <h3>New Question</h3>
+      <form class="custom-form-control formAsk" action="index.html" method="post">
+        <div class="row-md-1">
+          <div>
+            Title
+          </div>
+          <input type="text" name="head" value="How to build a moon park?">
+        </div>
+        <div class="row-md-8">
+          <div>
+            Text
+          </div>
+          <textarea name="Text" class="textarea"></textarea>
+        </div>
+        <div class="row-md-1">
+          <div>
+            Tags
+          </div>
+          <input type="text" name="tags">
+        </div>
+        <div class="row-md-2">
+          <input type="submit" name="ask" value="ASK">
+        </div>
+      </form>
+    </main>
+    <div class="col-md-4 bg-light">
+      <div class="panel panel-primary">
+        <div class="panel-heading"><h3>Popular Tags</h3></div>
+		    <div class="panel-body">
+            <span>perl</span>
+            <span>django</span>
+            <span>TechnoPark</span>
+            <span>MySQL</span>
+            <span>Firefox</span>
+            <span>IE</span>
+            <span>python</span>
+            <span>php</span>
+		    </div>
+        <div class="panel panel-secondary">
+          <div class="panel-heading"><h3>Best Members</h3></div>
+  		    <div class="panel-body">
+              <ol class="Members">
+                <li><a href="#">Borka</a></li>
+                <li><a href="#1">Mr.Smit</a></li>
+                <li><a href="#2">Salem</a></li>
+                <li><a href="#">Cocil</a></li>
+                <li><a href="#">Koks</a></li>
+              </ol>
+  		    </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script type="text/javascript" scr="../static/js/jquery-3.3.1.min.css"> </script>
+  <script type="text/javascript" src="../static/js/bootstrap.min.js"> </script>
+</body>
+</html>
