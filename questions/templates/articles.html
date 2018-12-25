@@ -1,0 +1,41 @@
+{% extends "question/base.html" %}
+
+{% load static %}
+{% block content %}
+    <!-- Begin page content -->
+    <main role="main" class="container">
+        <div class="row">
+            <div class="col-8">
+                {% for article in articles %}
+                <div class="row">
+                    <div class="col-2">
+                        {{ article.title }}
+                    </div>
+                    <div class="col-2">
+                        {{ article.date_published }}
+                    </div>
+                    <div class="col-1">
+                        {{ article.is_published }}
+                    </div>
+                    <div class="col-1">
+                        {{ article.likes }}
+                    </div>
+                    <div class="col-3">
+                        {% if article.picture %}
+                            <img width="100" src="{{ article.picture.url }}" alt="">
+                        {% endif %}
+                    </div>
+                    <div class="col-2">
+                        {{ article.text }}
+                    </div>
+                    <div class="col-1">
+                        <button class="js-like-article" data-article_id="{{ article.id }}">Лайк</button>
+                        {% csrf_token %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="col-4">Tags</div>
+        </div>
+    </main>
+{% endblock %}

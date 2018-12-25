@@ -1,0 +1,18 @@
+{% extends "question/base.html" %}
+
+{% load static %}
+{% block content %}
+    <!-- Begin page content -->
+    <main role="main" class="container">
+        <div class="row">
+            <div class="col-8">
+                <form action="" method="POST" enctype="multipart/form-data">
+                {{ form.as_p }}
+                {% csrf_token %}
+                <input type="submit" value="отправить">
+                </form>
+            </div>
+            <div class="col-4">Tags</div>
+        </div>
+    </main>
+{% endblock %}

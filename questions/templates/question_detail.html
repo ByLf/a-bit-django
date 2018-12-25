@@ -1,0 +1,17 @@
+{% extend "base.html" %}
+{% block content %}
+<div class="post row-md-2">
+  <div class="image icon col-md-2">
+    <img src="{{avatar}}" alt="">
+  </div>
+  <div class="col-md-10">
+    <h3>{{title}}</h3>
+    <div class="text">{{textMessage}}</div>
+  </div>
+</div>
+<div>
+  {% for answer,preview, in anwers%}
+    {% include "answer.html" %}
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "question/base.html" %}
+
+{% load static %}
+{% block content %}
+    <!-- Begin page content -->
+    <main role="main" class="container">
+        <div class="row">
+            <div class="col-8">
+                {% for author in authors %}
+                <div class="row">
+                    <div class="col-2">
+                        {{ author.name }}
+                    </div>
+                    <div class="col-10">
+                        {{ author.birthday }}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="col-4">Tags</div>
+        </div>
+    </main>
+{% endblock %}
