@@ -1,14 +1,28 @@
-<div class="panel panel-primary">
-  <div class="panel-heading">
-    <h3>Popular Tags</h3>
-  </div>
-  <div class="panel-body">
-      <span>perl</span>
-      <span>django</span>
-      <span>TechnoPark</span>
-      <span>MySQL</span>
-      <span>Firefox</span>
-      <span>IE</span>
-      <span>python</span>
-      <span>php</span>
-  </div>
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h2>{{title}}</h2>
+
+    {% for q in questions %}
+        <p> {{ q }} </p>
+    {% endfor %}
+
+    <p> total: {{ questions|length }} </p>
+
+    <div class="pagination">
+        <span class="step-links">
+            {% if questions.has_previous %}
+                <a href="?page={{ questions.previous_page_number }}"><-</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ questions.number }} of {{ questions.paginator.num_pages }}
+            </span>
+
+            {% if questions.has_next %}
+                <a href="?page={{ questions.next_page_number }}">-></a>
+            {% endif %}
+        </span>
+    </div>
+{% endblock content %}

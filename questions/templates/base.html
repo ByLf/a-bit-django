@@ -7,46 +7,30 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="icon" href="https://getbootstrap.com/favicon.ico">
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/master.css">
-  <title>Base document</title>
+  <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+  <link rel="stylesheet" href="{% static "/css/master.css" %}">
+  <title>{{title}}</title>
 
 </head>
 <body>
-  <header class="navbar navbar-expand-md">
-    <h1>Ask Bazhenov</h1>
-    <form class="form-inline my-4 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Ask" aria-label="Search">
-      <button class="btn btn-primary my-2 my-sm-0 bg-" type="submit">Ask</button>
-    </form>
-    <div class="indeficator pull-right">
-      <div class="image icon">
-        <img class="img-fluid" src="../static/no_avatar.png" alt="Avatar">
-      </div>
-      <div class="inline">
-        <div class="name">{{nick}}</div>
-        <div class="personalRef">
-          <a href="/settings.html">settings</a>
-          <a href="">log out</a>
-        </div>
-      </div>
-    </div>
-  </header>
+  {%include "header.html"%}
   <div class="wrapper container row">
     <main class="col-md-8 ">
       {% block content %}
+      <h2>404</h2>
+      <p>Page Not Found</p>
 	    {% endblock %}
     </main>
     <div class="col-md-4 bg-light">
-      {% block popTag %}
-	    {% endblock %}
-      {% block bestMembers %}
-	    {% endblock %}
-    </div>
+      {% include "popTag.html" %}
+      {% include "bestMembers.html" %}
+	  </div>
   </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script type="text/javascript" scr="../static/js/jquery-3.3.1.min.css"> </script>
-  <script type="text/javascript" src="../static/js/bootstrap.min.js"> </script>
+  <script src="{% static "js/jquery.min.js" %}"></script>
+  <script src="{% static "js/popper.min.js" %}"></script>
+  <script src="{% static "js/bootstrap.min.js" %}"></script>
+  <script src="{% static "js/centrifuge.min.js" %}"></script>
+  <script src="{% static "js/askme.js" %}"></script>
 </body>
 </html>
 /*list_view detail_view*/

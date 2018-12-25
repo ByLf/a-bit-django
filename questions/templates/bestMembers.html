@@ -2,11 +2,9 @@
   <div class="panel-heading"><h3>Best Members</h3></div>
   <div class="panel-body">
       <ol class="Members">
-        <li><a href="#">Borka</a></li>
-        <li><a href="#1">Mr.Smit</a></li>
-        <li><a href="#2">Salem</a></li>
-        <li><a href="#">Cocil</a></li>
-        <li><a href="#">Koks</a></li>
+        {% for Member,ref in dist_Members %}
+          <li><a href="{{ref}}"></a>{{Member}}</li>
+        {% endfor %}
       </ol>
   </div>
 </div>
